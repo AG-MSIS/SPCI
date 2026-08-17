@@ -1,0 +1,34 @@
+[project]
+name = "spci"
+version = "0.1.0"
+description = "Implementation of the algorithms and experiments from the MFI 2026 paper 'A Study of the Sigma Point Covariance Increase Method in the Pure Propagation Unscented Kalman Filter'."
+authors = [
+  "Arne Hasselbring <arha@uni-bremen.de>",
+  "Udo Frese <ufrese@uni-bremen.de>",
+]
+readme = "README.md"
+requires-python = "~=3.13.0"
+dependencies = [
+  "matplotlib ~=3.10",
+  "numpy ~=2.0",
+  "scipy ~=1.15",
+  "tqdm",
+]
+
+[dependency-groups]
+lint = [
+  "pyright >=1.1.408",
+  "ruff >=0.14.11"
+]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "standard"
+reportMissingTypeStubs = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+extend-select = ["F", "E", "W", "I", "UP", "TCH", "PGH", "NPY", "PERF", "RUF", "N"]
